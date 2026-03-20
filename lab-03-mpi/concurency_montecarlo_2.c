@@ -7,9 +7,9 @@
 int main(int argc, char *argv[])
 {
     int rank, size;
-    long long total_points;       
-    long long local_points;       
-    long long local_inside = 0;  
+    long long total_points;
+    long long local_points;
+    long long local_inside = 0;
     long long global_inside = 0;
     double pi_approx;
     double t_start, t_end;
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-   
+
     local_points = total_points / size;
     if (rank == size - 1)
         local_points += total_points % size;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     t_start = MPI_Wtime();
     MPI_Barrier(MPI_COMM_WORLD);
 
-    
+
     srand(seed);
 
     for (long long i = 0; i < local_points; i++) {
@@ -63,11 +63,7 @@ int main(int argc, char *argv[])
     if (rank == 0) {
         pi_approx = 4.0 * (double)global_inside / (double)total_points;
 
-        printf("Liczba procesów  : %d\n",   size);
-        printf("Łączna l. punktów: %lld\n", total_points);
-        printf("Punkty w kole    : %lld\n", global_inside);
         printf("Przybliżenie PI  : %.10f\n", pi_approx);
-        printf("Błąd bezwzgl.    : %.10f\n", fabs(pi_approx - M_PI));
         printf("Czas [s]         : %.6f\n",  t_end - t_start);
     }
 

@@ -18,7 +18,7 @@ for P in "${PROCS[@]}"; do
     OUTPUT=$(mpiexec -machinefile ./nodes -np $P ./program_c $N 2>/dev/null)
     T=$(echo "$OUTPUT" | grep "Czas" | awk '{print $NF}')
     echo "strong,$N,$P,$REP,$T" >> "$OUT"
-    echo "[strong] N=$N P=$P rep=$REP T=${T}"
+    echo "[strong] N=$N P=$P rep=$REP T=${T}s"
 done
 
 
@@ -28,5 +28,5 @@ for P in "${PROCS[@]}"; do
     OUTPUT_2=$(mpiexec -machinefile ./nodes -np $P ./program_c $N_TOTAL 2>/dev/null)
     T2=$(echo "$OUTPUT_2" | grep "Czas" | awk '{print $NF}')
     echo "weak,$N_TOTAL,$P,$REP,$T2" >> "$OUT"
-    echo "[weak] N=$N_TOTAL P=$P rep=$REP T=${T2}"
+    echo "[weak] N=$N_TOTAL P=$P rep=$REP T=${T2}s"
 done

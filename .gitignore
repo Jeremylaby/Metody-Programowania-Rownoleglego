@@ -3,4 +3,5 @@
 a.out
 *_c
 
-.
+.idea/
+.vscode/

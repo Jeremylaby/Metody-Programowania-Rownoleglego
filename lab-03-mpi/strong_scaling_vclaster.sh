@@ -25,8 +25,8 @@ done
 
 for P in "${PROCS[@]}"; do
     N_TOTAL=$(( N_PER_PROC * P ))
-    OUTPUT_2=$(mpiexec -machinefile ./nodes -np $P ./program_c $N_N_TOTAL 2>/dev/null)
+    OUTPUT_2=$(mpiexec -machinefile ./nodes -np $P ./program_c $N_TOTAL 2>/dev/null)
     T2=$(echo "$OUTPUT_2" | grep "Czas" | awk '{print $NF}')
-    echo "weak,$N_TOTAL,$P,$REP,$T" >> "$OUT"
+    echo "weak,$N_TOTAL,$P,$REP,$T2" >> "$OUT"
     echo "[weak] N=$N_TOTAL P=$P rep=$REP T=${T2}"
 done

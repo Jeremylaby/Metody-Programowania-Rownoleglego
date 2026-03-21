@@ -5,9 +5,6 @@
 #SBATCH --partition=plgrid
 #SBATCH --account=plgmpr26-cpu
 
-module add .plgrid plgrid/tools/openmpi
-mpicc -O2 -o program_c concurency_montecarlo_2.c -lm
-
 REP=${1:-1}
 OUT="results/ares/raw_rep${REP}.csv"
 mkdir -p results/ares

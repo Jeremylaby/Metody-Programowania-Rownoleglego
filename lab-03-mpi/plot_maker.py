@@ -3,10 +3,10 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+file_dir="vcluster"
+os.makedirs(f"plots/{file_dir}", exist_ok=True)
 
-os.makedirs("plots/vcluster", exist_ok=True)
-
-df = pd.read_csv("./results/vcluster/raw_all.csv")
+df = pd.read_csv(f"./results/{file_dir}/raw_all.csv")
 df["time"] = pd.to_numeric(df["time"], errors="coerce")
 df = df.dropna(subset=["time"])
 
@@ -43,7 +43,7 @@ for scaling in ["strong", "weak"]:
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     plt.tight_layout()
-    plt.savefig(f"plots/vcluster/{scaling}_time.png", dpi=150)
+    plt.savefig(f"plots/{file_dir}/{scaling}_time.png", dpi=150)
     plt.close()
 
     fig, ax = plt.subplots(figsize=(7, 5))
@@ -77,7 +77,7 @@ for scaling in ["strong", "weak"]:
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     plt.tight_layout()
-    plt.savefig(f"plots/vcluster/{scaling}_speedup.png", dpi=150)
+    plt.savefig(f"plots/{file_dir}/{scaling}_speedup.png", dpi=150)
     plt.close()
 
-print("Done. Plots saved to plots/vcluster/")
+print(f"Done. Plots saved to plots/{file_dir}/")

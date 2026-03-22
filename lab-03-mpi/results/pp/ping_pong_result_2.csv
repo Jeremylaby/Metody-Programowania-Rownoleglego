@@ -1,0 +1,19 @@
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 2740113 RUNNING AT vnode-10.lab.ii.agh.edu.pl
+=   EXIT CODE: 139
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 2764408 RUNNING AT vnode-07.lab.ii.agh.edu.pl
+=   EXIT CODE: 139
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Segmentation fault (signal 11)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions

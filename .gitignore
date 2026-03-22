@@ -2,6 +2,7 @@
 *.out
 a.out
 *_c
+*.zip
 
 .idea/
 .vscode/

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <mpi.h>
 
-#define REPEATS 100
+#define REPEATS 1000
 
 int main(int argc, char *argv[])
 {
